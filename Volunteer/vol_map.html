@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="../css/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 100%;
+        }
+    
+      </style>
+    
+    <title>HOH-demo</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+           <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="./"><span class="fa fa-home fa-lg"></span></a></li>
+                  
+                </ul>  
+                <span class="navbar-text">
+                    <a id="logout">
+                        <span class="fa fa-sign-in" ></span> Logout</a>
+                </span>
+           </div>            
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+   
+  
+    <header class="jumbotron " >
+        <div class="row justify-content-center">
+     
+       
+            <h1>HoH-demo</h1>
+        
+        
+    </div>
+    </header>
+
+
+    
+      <div class="container">
+          <div class="main">
+        
+  
+      
+        
+        
+        
+        
+        <div class="justify-content-center row">
+            <h3>Requests near me</h3>
+        </div>
+        <div id="map"></div>
+  
+        
+          </div>  
+     
+      
+    
+      
+        
+             
+         
+            
+            
+            
+            
+        </div>
+  
+        </div>
+      
+         
+ 
+
+    <footer class="footer">
+        <div class="container"> 
+          
+           <div class="row justify-content-center">             
+         
+                 
+                <div class="col-auto">
+                    <p>© Copyright 2020 Yurii Yevdokimov</p>
+                </div>
+                </div>
+           </div>
+     
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&AIzaSyAIAQXpfC_ljM4-2c2Ktt4f7BWZWkgRdnEcallback=initMap" async defer></script>
+         
+</div>
+
+<script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+    }
+  </script>
+
+<script src="../dist/main.js"></script>
+</body>
+
+</html>
+
+

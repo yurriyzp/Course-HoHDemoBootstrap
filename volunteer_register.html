@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+    
+    <title>HOH-demo</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+           <div class="collapse navbar-collapse" id="Navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="./"><span class="fa fa-home fa-lg"></span></a></li>
+                  
+                </ul>  
+               
+           </div>            
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+   
+  
+    <header class="jumbotron " >
+        <div class="row justify-content-center">
+     
+       
+            <h1>HoH-demo</h1>
+        
+        
+    </div>
+    </header>
+
+
+    
+      <div class="container">
+          <div class="main">
+        
+  
+      
+        
+        
+        
+        
+        <div class="justify-content-center row">
+            <h3>Volunteer Registration</h3>
+        </div>
+        <div class="row justify-content-center">
+            
+          
+                <form>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2 col-form-label"> Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="name">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="username">
+                        </div>
+                    </div>
+
+                
+                    <div class="form-group row">
+                      <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="inputemail">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
+                      <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputpassword">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="adress" class="col-sm-2 col-form-label">Adress</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="adress">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                      <label for="geo" class="col-sm-2 col-form-label">GeoLocation</label>
+                      <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary btn-small" id="btngeo">Geo</button>
+                      </div>
+                      
+                      <div class="col-sm-4">
+                        <input type="text" class="form-control" id="geo">
+                      </div>
+                      <div class="col-sm-4">
+                          <input type="text" class="form-control" id="geo2">
+                        </div>
+                  </div>
+                    <div class="form-group row">
+                        <label for="tel" class="col-sm-2 col-form-label">Phone number</label>
+                        <div class="col-sm-10">
+                          <input type="tel" class="form-control" id="tel">
+                        </div>
+                        
+                    </div>
+
+                    
+                    
+                    <div class="form-group row ">
+                        <div class="col-sm-6 ">
+                            <a role="button" class="form-control btn btn-primary " href="/">Cancel</a>
+                          </div>
+                      <div class="col-sm-6">
+                        <button type="button" id="reg_vol" class="btn btn-primary form-control">Register</button>
+                      </div>
+                    </div>
+                  </form>
+            
+        </div>
+
+  
+        </div>
+      
+         
+ 
+
+    <footer class="footer">
+        <div class="container"> 
+          
+           <div class="row justify-content-center">             
+         
+                 
+                <div class="col-auto">
+                    <p>© Copyright 2020 Yurii Yevdokimov</p>
+                </div>
+                </div>
+           </div>
+        </div>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    
+
+</div>
+<script>
+  $(document).ready(function(){
+  $("#btngeo").click(()=>{
+    $.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBKp-X_cYmMaYtA0OvCsZc8_dGOnDf_vYI",(data)=>{
+          var lat=data.location.lat;
+          var lon=data.location.lng;
+          $("#geo").val(lat);
+      $("#geo2").val(lon);
+      console.log(lat+" "+lon)
+    })
+  
+   
+      
+
+      
+    });
+ })
+ 
+
+  
+</script>
+</body>
+
+</html>
+
+
